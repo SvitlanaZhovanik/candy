@@ -1,13 +1,15 @@
 const menuToggle = document.querySelector('.menu-open');
 const menuClose = document.querySelector('.menu-close');
 const mobileMenu = document.querySelector('.mobile-menu');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-const desktopNavLinks = document.querySelectorAll('.desktop-nav-link');
+const mobileMenuLinks = Array.from(
+  document.querySelectorAll('.mobile-nav-link')
+);
 
 function openMenu() {
   mobileMenu.style.display = 'block';
   menuToggle.style.display = 'none';
   menuClose.style.display = 'block';
+  mobileMenu.addEventListener('click', handleLink);
   document.body.style.overflow = 'hidden';
 }
 
@@ -15,6 +17,7 @@ function closeMenu() {
   mobileMenu.style.display = 'none';
   menuToggle.style.display = 'block';
   menuClose.style.display = 'none';
+  mobileMenu.removeEventListener('click', handleLink);
   document.body.style.overflow = '';
 }
 
@@ -28,68 +31,16 @@ document.addEventListener('keydown', event => {
   }
 });
 
-desktopNavLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
+function setScrollBehavior() {
+  const html = document.documentElement;
+  html.style.scrollBehavior = 'smooth';
+}
 
-    const href = link.getAttribute('href');
-    const targetId = href.startsWith('/candy-planet/#')
-      ? href.substring(14)
-      : null;
-    const isRootLink = href === '/candy-planet/' || href === '/candy-planet';
-    const isCurrentPageHome = window.location.pathname === '/candy-planet/';
+window.onload = setScrollBehavior;
 
-    if (isRootLink) {
-      window.location.href = '/candy-planet/';
-    } else if (targetId) {
-      if (!isCurrentPageHome) {
-        window.location.href = '/candy-planet/?scrollTo=' + targetId;
-      }
-
-      document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-      closeMenu();
-    }, 100);
-  });
-});
-
-mobileNavLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-
-    const href = link.getAttribute('href');
-    const targetId = href.startsWith('/candy-planet/#')
-      ? href.substring(14)
-      : null;
-    const isRootLink = href === '/candy-planet/' || href === '/candy-planet';
-    const isCurrentPageHome = window.location.pathname === '/candy-planet/';
-
-    if (isRootLink) {
-      window.location.href = '/candy-planet/';
-    } else if (targetId) {
-      if (!isCurrentPageHome) {
-        window.location.href = '/candy-planet/?scrollTo=' + targetId;
-      }
-
-      document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-      closeMenu();
-    }, 100);
-  });
-});
-
-window.addEventListener('load', () => {
-  const params = new URLSearchParams(window.location.search);
-  const targetId = params.get('scrollTo');
-
-  if (targetId) {
-    const targetElement = document.querySelector('#' + targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
+const handleLink = e => {
+  const isLink = mobileMenuLinks.find(link => link === e.target);
+  if (isLink) {
+    closeMenu();
   }
-});
+};
