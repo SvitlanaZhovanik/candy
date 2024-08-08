@@ -1,0 +1,164 @@
+.hero {
+  padding: 24px 0;
+  margin-top: -24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @include media(desktop) {
+    padding: 0;
+    margin-top: -100px;
+    position: relative;
+  }
+}
+
+.hero-img-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+
+  padding-top: 60px;
+
+  @include retina-background(
+    '../img/hero/bg-mob@1x.jpg',
+    '../img/hero/bg-mob@2x.jpg'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    gap: 73px;
+
+    padding-top: 259px;
+    padding-bottom: 308px;
+
+    @include retina-background(
+      '../img/hero/bg-desk@1x.jpg',
+      '../img/hero/bg-desk@2x.jpg'
+    );
+
+    box-shadow: 0px 0px 40px 0px #c6aecd;
+  }
+}
+
+.hero-title {
+  font-family: 'Leckerli One';
+  @include font(32, 36);
+  color: $_title_color;
+  text-align: center;
+
+  @include media(desktop) {
+    @include font(64, 86);
+  }
+}
+
+.hero-img {
+  @include media(desktop) {
+    margin-right: 71px;
+  }
+}
+
+.hero-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include media(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 0;
+
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+  }
+}
+
+.hero-button-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 211px;
+  height: 76px;
+
+  border-radius: 12px;
+  background-color: $_white_color;
+  box-shadow: 0px 0px 40px 0px #b4e7ff;
+
+  transition: transform 0.3s ease;
+
+  @include media(desktop) {
+    width: 312px;
+    height: 92px;
+
+    border: 1px #dcefff;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.hero-disclaimer {
+  position: relative;
+
+  @include media(desktop) {
+    width: 383px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $_primary_blue_color;
+    filter: blur(30px);
+    z-index: -1;
+
+    @include media(desktop) {
+      background: #efdcf0;
+    }
+  }
+}
+
+.hero-disclaimer-text {
+  display: flex;
+  gap: 10px;
+
+  padding: 10px;
+
+  @include font(14, 17);
+  font-weight: 300;
+
+  @include media(desktop) {
+    @include font(20, 24);
+  }
+}
+
+.hero-disclaimer-note {
+  @include font(14, 17);
+  font-weight: 300;
+
+  @include media(desktop) {
+    @include font(16, 19);
+  }
+
+  a {
+    text-decoration-line: underline;
+  }
+}

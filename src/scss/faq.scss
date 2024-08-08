@@ -1,0 +1,129 @@
+.faq-container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  border-radius: 0px 20px;
+  box-shadow: 0px 4px 4px 0px #cde9ff;
+
+  @include retina-background(
+    '../img/faq/bg-mob@1x.jpg',
+    '../img/faq/bg-mob@2x.jpg'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    padding: 60px 300px;
+
+    border-radius: 0px 120px;
+
+    @include retina-background(
+      '../img/faq/bg-desk@1x.jpg',
+      '../img/faq/bg-desk@2x.jpg'
+    );
+  }
+}
+
+.faq-title {
+  margin-bottom: 36px;
+
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+  text-align: center;
+
+  @include media(desktop) {
+    margin-bottom: 96px;
+
+    @include font(36, 48);
+  }
+}
+
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include media(desktop) {
+    gap: 20px;
+  }
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding: 16px 24px;
+
+  border-radius: 4px 28px;
+  background: $_violet_for_FAQ_color;
+  box-shadow: 0px 4px 4px 0px #b2c5f5;
+
+  @include media(desktop) {
+    padding: 29px 24px;
+  }
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  cursor: pointer;
+}
+
+.faq-question-text {
+  color: $_question_text_default_color;
+  @include font(14, 17);
+  text-align: left;
+
+  font-family: 'Inria Serif';
+  font-weight: 400;
+
+  @include media(desktop) {
+    @include font(20, 24);
+  }
+}
+
+.faq-item.open .faq-question-text {
+  color: $_question_text_selected_color;
+}
+
+.faq-toggle-icon {
+  display: none;
+}
+
+.faq-item.open .faq-close-icon {
+  display: block;
+}
+
+.faq-item.open .faq-open-icon {
+  display: none;
+}
+
+.faq-item:not(.open) .faq-close-icon {
+  display: none;
+}
+
+.faq-item:not(.open) .faq-open-icon {
+  display: block;
+}
+
+.faq-answer {
+  display: none;
+
+  font-family: 'Inria Sans';
+  @include font(18, 22);
+
+  @include media(to-desktop) {
+    height: 66px;
+  }
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}

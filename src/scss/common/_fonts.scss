@@ -1,0 +1,43 @@
+$font-path: './../fonts';
+
+@font-face {
+  font-family: 'Inria Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('#{$font-path}/InriaSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  font-weight: 300;
+  font-style: normal;
+  src: url('#{$font-path}/InriaSerif-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  font-weight: 400;
+  font-style: normal;
+  src: url('#{$font-path}/InriaSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  font-weight: 400;
+  font-style: italic;
+  src: url('#{$font-path}/InriaSerif-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  font-weight: 700;
+  font-style: normal;
+  src: url('#{$font-path}/InriaSerif-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Leckerli One';
+  font-weight: 400;
+  font-style: normal;
+  src: url('#{$font-path}/LeckerliOne-Regular.ttf') format('truetype');
+}

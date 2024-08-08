@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="burger-menu" viewBox="0 0 48 32">
+      <path d="M4 0h40a4 4 0 0 1 0 8H4a4 4 0 0 1 0-8zM4 12h40a4 4 0 0 1 0 8H4a4 4 0 0 1 0-8zM4 24h40a4 4 0 0 1 0 8H4a4 4 0 0 1 0-8z"/>
+    </symbol>
+
+    <symbol id="reviews-triangle" viewBox="0 0 64 32">
+      <path fill="#b3e7ff" d="M0 24.704V1.334h64L7.718 29.475C4.172 31.248 0 28.669 0 24.705z" style="fill:var(--color1, #b3e7ff)"/>
+    </symbol>
+  </defs>
+</svg>

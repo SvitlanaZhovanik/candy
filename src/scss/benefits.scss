@@ -1,0 +1,369 @@
+.benefits {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 286px;
+    background: $_secondary_blue_color;
+    filter: blur(58.5px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 456px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 200px;
+    background: $_additional_blue_color;
+    filter: blur(58.5px);
+    z-index: -1;
+  }
+
+  @include media(desktop) {
+    &::before {
+      content: none;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.benefits-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 57px;
+
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 383px;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  @include media(desktop) {
+    gap: 60px;
+    padding-top: 120px;
+    padding-bottom: 193px;
+
+    gap: 34px;
+
+    @include retina-background(
+      '../img/benefits/bg-desk@1x.png',
+      '../img/benefits/bg-desk@2x.png'
+    );
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $_additional_blue_color;
+      filter: blur(58.5px);
+      z-index: -1;
+    }
+  }
+}
+
+.benefits-wrapper {
+  @include media(desktop) {
+    position: relative;
+  }
+}
+
+.benefits-title {
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+
+  @include media(desktop) {
+    @include font(36, 48);
+  }
+}
+
+.benefits-description {
+  @include font(14, 24);
+  font-weight: 700;
+
+  @include media(desktop) {
+    @include font(18, 24);
+    margin-left: 612px;
+  }
+}
+
+.benefits-character {
+  display: block;
+
+  position: absolute;
+  top: 355px;
+  right: 24px;
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.benefits-clouds-container {
+  position: absolute;
+  top: 456px;
+  left: 0;
+  width: 320px;
+  height: 200px;
+
+  padding: 24px;
+
+  @include media(desktop) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 486px;
+    height: 210px;
+  }
+}
+
+.benefits-cloud-box {
+  width: 144px;
+  height: 82px;
+
+  @include retina-background(
+    '../img/benefits/cloud-mob@1x.png',
+    '../img/benefits/cloud-mob@2x.png'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    width: 180px;
+    height: 102px;
+
+    @include retina-background(
+      '../img/benefits/cloud-desk@1x.png',
+      '../img/benefits/cloud-desk@2x.png'
+    );
+  }
+}
+
+.benefits-cloud-top {
+  position: absolute;
+  top: 0;
+  left: 79px;
+
+  padding: 13px 0 0 42px;
+
+  @include media(desktop) {
+    left: 145px;
+
+    padding: 21px 0 0 60px;
+  }
+}
+
+.benefits-star {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include font(14, 17);
+
+  @include retina-background(
+    '../img/benefits/star-mob@1x.png',
+    '../img/benefits/star-mob@2x.png'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    width: 60px;
+    height: 60px;
+
+    @include font(16, 19);
+
+    @include retina-background(
+      '../img/benefits/star-desk@1x.png',
+      '../img/benefits/star-desk@2x.png'
+    );
+  }
+}
+
+.benefits-cloud-right {
+  position: absolute;
+  top: 57px;
+  right: 0;
+
+  padding: 20px 0 0 32px;
+
+  @include media(desktop) {
+    top: 50px;
+
+    padding: 20px 0 0 39px;
+  }
+}
+
+.benefits-online-offline-container {
+  display: flex;
+  gap: 8px;
+
+  margin-left: 12px;
+  margin-bottom: 4px;
+
+  @include media(desktop) {
+    margin-left: 17px;
+    margin-bottom: 8px;
+  }
+}
+
+.benefits-online-image,
+.benefits-offline-image {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  @include media(desktop) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.benefits-online-offline-text {
+  @include font(11, 13);
+  font-weight: 700;
+
+  @include media(desktop) {
+    @include font(12, 14);
+  }
+}
+
+.benefits-cloud-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 81px;
+
+  padding: 8px 0 0 51px;
+
+  @include media(desktop) {
+    right: 146px;
+
+    padding: 11px 0 0 67px;
+  }
+}
+
+.benefits-reviews-image {
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  margin-left: 4px;
+  margin-bottom: 4px;
+
+  @include media(desktop) {
+    width: 24px;
+    height: 24px;
+
+    margin-left: 7px;
+    margin-bottom: 6px;
+  }
+}
+
+.benefits-reviews-title {
+  margin-bottom: 4px;
+
+  @include font(11, 13);
+  font-weight: 700;
+
+  @include media(desktop) {
+    margin-bottom: 8px;
+
+    @include font(12, 14);
+  }
+}
+
+.benefits-reviews-number {
+  margin-left: 3px;
+
+  @include font(12, 14);
+  font-weight: 700;
+
+  @include media(desktop) {
+    margin-left: 2px;
+
+    @include font(14, 17);
+  }
+}
+
+.benefits-cloud-left {
+  position: absolute;
+  bottom: 58px;
+  left: 0;
+
+  padding: 8px 0 0 42px;
+
+  @include media(desktop) {
+    bottom: 46px;
+
+    padding: 8px 0 0 53px;
+  }
+}
+
+.benefits-downloads-image {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  margin-left: 13px;
+
+  @include media(desktop) {
+    width: 28px;
+    height: 28px;
+
+    margin-left: 17px;
+    margin-bottom: 4px;
+  }
+}
+
+.benefits-downloads-title {
+  margin-bottom: 4px;
+
+  @include font(11, 13);
+  font-weight: 700;
+
+  @include media(desktop) {
+    margin-bottom: 8px;
+
+    @include font(12, 14);
+  }
+}
+
+.benefits-downloads-number {
+  margin-left: 4px;
+
+  @include font(12, 14);
+  font-weight: 700;
+
+  @include media(desktop) {
+    margin-left: 2px;
+
+    @include font(14, 17);
+  }
+}

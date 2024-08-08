@@ -1,0 +1,96 @@
+.gallery {
+  padding: 60px 0;
+
+  @include media(desktop) {
+    padding: 120px 0 160px;
+  }
+}
+
+.gallery-container {
+  @include media(to-desktop) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.gallery-title {
+  margin-bottom: 28px;
+
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+  text-align: center;
+
+  @include media(desktop) {
+    margin-bottom: 60px;
+
+    @include font(36, 48);
+  }
+}
+
+.gallery-swiper-container {
+  overflow: hidden;
+  position: relative;
+
+  @include media(desktop) {
+    padding: 44px 80px;
+  }
+}
+
+.gallery-swiper-slide {
+  width: fit-content !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 220px;
+  height: 374px;
+
+  @include media(desktop) {
+    width: 347px;
+    height: 592px;
+  }
+}
+
+.gallery-button {
+  display: none;
+  transition: transform 0.3s ease;
+
+  @include media(desktop) {
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    z-index: 10;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-button-prev {
+  @include media(desktop) {
+    left: 0;
+  }
+}
+
+.gallery-button-prev-image {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.gallery-button-next {
+  @include media(desktop) {
+    right: 0;
+  }
+}
+
+.gallery-button-next-image {
+  display: block;
+  width: 80px;
+  height: 80px;
+}

@@ -1,0 +1,73 @@
+.terms {
+  padding: 132px 0 60px;
+
+  @include media(desktop) {
+    padding: 180px 0 80px;
+  }
+}
+
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 0 53px;
+
+  @include media(desktop) {
+    gap: 40px;
+
+    padding: 0 370px;
+  }
+}
+
+.terms-title {
+  margin-bottom: 32px;
+
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+  text-align: center;
+
+  @include media(desktop) {
+    margin-bottom: 60px;
+
+    @include font(36, 48);
+  }
+}
+
+.terms-text {
+  @include font(12, 14);
+
+  font-weight: 300;
+
+  @include media(desktop) {
+    @include font(18, 22);
+  }
+}
+
+.terms-disclaimer-link {
+  text-decoration-line: underline;
+}
+
+.terms-subtitle {
+  @include font(16, 19);
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  @include media(desktop) {
+    margin-bottom: 28px;
+
+    @include font(24, 29);
+  }
+}
+
+.terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include media(desktop) {
+    gap: 24px;
+  }
+}

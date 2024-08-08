@@ -1,0 +1,89 @@
+.privacy {
+  padding: 132px 0 60px;
+
+  @include media(desktop) {
+    padding: 180px 0 80px;
+  }
+}
+
+.privacy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 0 50px;
+
+  @include media(desktop) {
+    gap: 40px;
+
+    padding: 0 370px;
+  }
+}
+
+.privacy-title {
+  margin-bottom: 32px;
+
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+  text-align: center;
+
+  @include media(desktop) {
+    margin-bottom: 60px;
+
+    @include font(36, 48);
+  }
+}
+
+.privacy-text {
+  @include font(12, 14);
+
+  font-weight: 300;
+
+  @include media(desktop) {
+    @include font(16, 19);
+  }
+}
+
+.privacy-disclaimer-link {
+  text-decoration-line: underline;
+}
+
+.privacy-subtitle {
+  @include font(16, 19);
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  @include media(desktop) {
+    margin-bottom: 28px;
+
+    @include font(24, 29);
+  }
+}
+
+.privacy-list {
+  padding-left: 18px;
+
+  @include font(12, 24);
+  font-weight: 300;
+
+  list-style-type: disc;
+
+  @include media(desktop) {
+    padding-left: 28px;
+
+    @include font(18, 24);
+  }
+}
+
+.privacy-list-item {
+  &::marker {
+    content: '•  ';
+  }
+}
+
+.privacy-list-title {
+  font-style: italic;
+  font-weight: 400;
+}

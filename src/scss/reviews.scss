@@ -1,0 +1,146 @@
+.reviews {
+  padding: 24px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include media(desktop) {
+    padding: 100px 0 0;
+
+    gap: 160px;
+  }
+}
+
+.reviews-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  overflow-x: hidden;
+
+  @include media(desktop) {
+    gap: 60px;
+    padding: 0;
+  }
+}
+
+.reviews-swiper-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.reviews-title {
+  color: $_title_color;
+  font-family: 'Leckerli One';
+
+  @include font(24, 32);
+
+  @include media(desktop) {
+    @include font(36, 48);
+  }
+}
+
+.reviews-swiper-container {
+  width: 100%;
+}
+
+.reviews-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2;
+}
+
+.reviews-review {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  position: relative;
+
+  padding: 24px 32px 20px;
+
+  border-radius: 24px 24px 24px 0px;
+  background: $_primary_blue_color;
+
+  .reviews-triangle {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+
+    fill: $_primary_blue_color;
+  }
+}
+
+.reviews-review-text {
+  @include font(14, 17);
+
+  @include media(desktop) {
+    @include font(18, 22);
+  }
+}
+
+.reviews-stars-container {
+  display: flex;
+  gap: 12px;
+}
+
+.reviews-review-user {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  padding: 10px 20px;
+
+  font-family: 'Inria Sans';
+  @include font(14, 17);
+
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  @include media(desktop) {
+    @include font(18, 22);
+  }
+}
+
+.reviews-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 212px;
+
+  @include retina-background(
+    '../img/reviews/bg-mob@1x.jpg',
+    '../img/reviews/bg-mob@2x.jpg'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    height: 479px;
+    border-radius: 32px;
+
+    @include retina-background(
+      '../img/reviews/bg-desk@1x.jpg',
+      '../img/reviews/bg-desk@2x.jpg'
+    );
+  }
+}
+
+.reviews-button-image {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.168);
+  }
+}

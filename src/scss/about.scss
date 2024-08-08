@@ -1,0 +1,94 @@
+.about-container {
+  position: relative;
+  z-index: -1;
+
+  padding-top: 72px;
+  padding-bottom: 16px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    background: #efdcf0;
+    filter: blur(20px);
+  }
+
+  @include retina-background(
+    '../img/about/bg-mob@1x.jpg',
+    '../img/about/bg-mob@2x.jpg'
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media(desktop) {
+    padding-top: 257px;
+    padding-bottom: 167px;
+
+    &::before {
+      content: '';
+      top: 257px;
+      bottom: 166px;
+      left: 120px;
+      width: 760px;
+    }
+
+    @include retina-background(
+      '../img/about/bg-desk@1x.jpg',
+      '../img/about/bg-desk@2x.jpg'
+    );
+  }
+}
+
+.about-title {
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: $_title_color;
+  font-family: 'Leckerli One';
+  @include font(24, 32);
+  white-space: nowrap;
+  text-align: center;
+
+  @include media(desktop) {
+    width: 742px;
+    margin-left: 18px;
+
+    @include font(36, 48);
+
+    top: 166px;
+    left: 120px;
+    transform: translateX(0);
+  }
+}
+
+.about-text {
+  position: relative;
+
+  @include font(14, 17);
+
+  @include media(desktop) {
+    width: 742px;
+    margin-left: 18px;
+
+    @include font(18, 22);
+  }
+}
+
+.about-character {
+  display: none;
+
+  @include media(desktop) {
+    display: block;
+
+    position: absolute;
+
+    top: 336px;
+    right: 160px;
+  }
+}
